@@ -10,33 +10,35 @@ const black = document.querySelector('.modal-backdrop');
 let nombres = [];
 let marcas = [];
 let cantidades = [];
-
+let c = 0;
     
     
-    save.addEventListener('click',()=>{ 
-        let nombre = inputAgregar.value;
-        let marca = inputMarca.value;
-        let cant = inputCant.value;
-        nombres.push(nombre);
-        marcas.push(marca);
-        cantidades.push(cant);
-        let nuevoElemento = document.createElement('tr');
-        
-        const nuevoItem = document.createElement('td');
-            const marcaItem = document.createElement('td');
-            const cantItem = document.createElement('td');
-            cuerpo.appendChild(nuevoElemento);
-            nuevoElemento.appendChild(nuevoItem);
-            nuevoElemento.appendChild(marcaItem);
-            nuevoElemento.appendChild(cantItem);
+function agregar(){ 
+    
+    let nombre = inputAgregar.value;
+    let marca = inputMarca.value;
+    let cant = inputCant.value;
+    nombres.push(nombre);
+    marcas.push(marca);
+    cantidades.push(cant);
+    let nuevoElemento = document.createElement('tr');
+    
+    const nuevoItem = document.createElement('td');
+    const marcaItem = document.createElement('td');
+    const cantItem = document.createElement('td');
+    cuerpo.appendChild(nuevoElemento);
+    nuevoElemento.appendChild(nuevoItem);
+    nuevoElemento.appendChild(marcaItem);
+    nuevoElemento.appendChild(cantItem);
 
-            nuevoItem.textContent = nombre;
-            marcaItem.textContent = marca;
-            cantItem.textContent = cant;
+    nuevoItem.textContent = nombres[c];
+    marcaItem.textContent = marcas[c];
+    cantItem.textContent = cantidades[c];
 
-        
-        
+    c++;
 
-        
+    inputAgregar.value = '';
+    inputMarca.value = '';
+    inputCant.value = '';
 
-    })
+}
