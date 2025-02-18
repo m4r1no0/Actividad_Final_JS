@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+</head>
+
+<body>
+    <header>
+        <h1>Software Colegio Prestamos</h1>
+    </header>
+    <section class="container">
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarE">
+                            Agregar Equipo
+                        </button>
+                    </div>
+                </div>
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Stock</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTabla">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <input type="text" placeholder="numero de id" id="idInstru">
+                <input type="text" placeholder="nombre de instructor" id="nombreInstru">
+                <button class="btn btn-primary">Enviar</button>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.identificacion</th>
+                            <th scope="col">Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-primary agregarPrestamo" id="btnAgregarPrestamo">Agregar
+                            Prestamo</button>
+                        <button class="btn btn-primary devolverPrestamo" id="btnDevolverPrestamo">Devolver
+                            prestamo</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Instructor</th>
+                                <th scope="col">Equipo</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <footer class="text-center">
+        <h6>Marino Osorio</h6>
+    </footer>
+
+    
+
+    <!-- Modal -->
+    <div class="modal fade" id="agregarE" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Agregar equipo</h3>
+                    <p>Ingrese el siguiente formulario</p>
+                    <label for="nombreEquipo">Nombre equipo</label>
+                    <div class="col">
+                        <input type="text" class="form-control" id="nombreEquipo">
+                    <label for="marca">Marca</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="marca">
+                    <label for="cantidad">Cantidad</label>
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" id="cantidad">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="cerrar">Cerrar</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="guarda">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="js/codigo.js"></script>
+</body>
+
+</html>
