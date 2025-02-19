@@ -39,17 +39,27 @@
                 </div>
             </div>
             <div class="col">
-                <input type="text" placeholder="numero de id" id="idInstru">
-                <input type="text" placeholder="nombre de instructor" id="nombreInstru">
-                <button class="btn btn-primary">Enviar</button>
-                <table class="table">
+                <div class="row">
+                    <div class="col">
+                        <input type="text" placeholder="identificacion" class="form-control" id="idInstru">
+                    </div>
+                    <div class="col">
+                        <input type="text" placeholder="nombre" class="form-control" id="nombreInstru">
+                    </div>
+                    <div class="col">
+                        <button class="btn btn-primary" onclick="agregarInstructor()">Enviar</button>
+                    </div>
+                </div>
+                
+                
+                <table class="table" id="cuerpoInstru">
                     <thead>
                         <tr>
                             <th scope="col">No.identificacion</th>
                             <th scope="col">Nombre</th>
                         </tr>
                     </thead>
-                    <tbody >
+                    <tbody id="cuerpoTabla" >
 
                     </tbody>
                 </table>
@@ -60,8 +70,9 @@
             <div class="col">
                 <div class="row">
                     <div class="col">
-                        <button class="btn btn-primary agregarPrestamo" id="btnAgregarPrestamo">Agregar
-                            Prestamo</button>
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarPrestamos" >
+                            Agregar Prestamo
+                        </button>
                         <button class="btn btn-primary devolverPrestamo" id="btnDevolverPrestamo">Devolver
                             prestamo</button>
                     </div>
@@ -80,7 +91,7 @@
                                 <th scope="col">Cantidad</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody id="cuerpoTablaP">
                         </tbody>
                     </table>
                 </div>
@@ -105,21 +116,22 @@
                 <div class="modal-body">
                     <h3>Agregar equipo</h3>
                     <p>Ingrese el siguiente formulario</p>
-                    <label for="nombreEquipo">Nombre equipo</label>
                     <div class="col">
+                        <label for="nombreEquipo">Nombre equipo</label>
                         <input type="text" class="form-control" id="nombreEquipo">
-                    <label for="marca">Marca</label>
+                        
                     </div>
                     <div class="col">
+                        <label for="marca">Marca</label>
                         <input type="text" class="form-control" id="marca">
-                    <label for="cantidad">Cantidad</label>
+                    
                     </div>
                     <div class="col">
+                        <label for="cantidad">Cantidad</label>
                         <input type="text" class="form-control" id="cantidad">
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-primary" id="cerrar">Cerrar</button>
                     <button type="button" class="btn btn-primary" data-bs-dismiss="modal" id="guarda" onclick="agregar()">Guardar</button>
                 </div>
             </div>
@@ -127,7 +139,41 @@
     </div>
 
 
-
+    <div class="modal fade" id="agregarPrestamos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Agregar equipo</h3>
+                    <p>Ingrese el siguiente formulario</p>
+                    <div class="col">
+                        <label for="InstructorP">Nombre Instructor </label>
+                        <input type="text" class="form-control" id="InstructorP">
+                        
+                    </div>
+                    <div class="col">
+                        <label for="nombreEquipoP">nombre Equipo</label>
+                        <input type="text" class="form-control" id="nombreEquipoP">
+                    </div>
+                    <div class="col">
+                        <label for="marcaP">Marca</label>
+                        <input type="text" class="form-control" id="marcaP">
+                    </div>
+                    <div class="col">
+                        <label for="cantidadP">Cantidad</label>
+                        <input type="text" class="form-control" id="cantidadP">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="cerrar">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="guarda" onclick="prestamos()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
