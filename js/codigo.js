@@ -16,6 +16,16 @@ let c = 0;
 let x = 0;
 let ids = [];
 let nombresInstru = [];
+let nombreInstruPrestamos = [];
+let equiposPrestamos = [];
+let marcasPrestamos = [];
+let cantidadesPrestamos = [];
+
+
+
+function guardar(){
+    localStorage.setItem (miDato, JSON.stringify(nombresEquipo,marcas,cantidades,nombresInstru,nombreInstruPrestamos,equiposPrestamos,marcasPrestamos,cantidadesPrestamos))
+}
     
     
 function agregar(){ 
@@ -100,6 +110,12 @@ function prestamos(){
         const actualizar = document.querySelector('.actualiza')
         actualizar.textContent = cantidades[indiceEquipo];
 
+        nombreInstruPrestamos.push(instructorP);
+        equiposPrestamos.push(equipoP);
+        marcasPrestamos.push(marcaPr);
+        cantidadesPrestamos.push(cantidadesP);
+
+
         const cuerpoTablaPrestamo = document.querySelector('#cuerpoTablaP');
         const nuevoElemento = document.createElement('tr');
         
@@ -107,6 +123,7 @@ function prestamos(){
         const equipo = document.createElement('td');
         const marca = document.createElement('td');
         const cantidad = document.createElement('td');
+        cantidad.classList.add('actulizaD')
 
         cuerpoTablaPrestamo.appendChild(nuevoElemento);
         nuevoElemento.appendChild(instructor);
@@ -118,9 +135,61 @@ function prestamos(){
         equipo.textContent = equipoP;
         marca.textContent = marcaPr;
         cantidad.textContent = cantidadesP;
-
-
-
     }
+}
+
+function devolver(){
+    const inputNombreD =document.querySelector('#InstructorD');
+    const inputNombreEquipoD =document.querySelector('#nombreEquipoD');
+    const inputMarcaD =document.querySelector('#marcaD');
+    const inputCantidadD =document.querySelector('#cantidadD');
+
+    let indiceD = -1;
+
+    let valorNombreD = inputNombreD.value;
+    let valorNombreEquipoD = inputNombreEquipoD.value;
+    let valorMarcaD = inputMarcaD.value
+    let valorCant = inputCantidadD.value;
+    let indiceEquipo = -1;
+    indiceEquipo = equiposPrestamos.indexOf(valorNombreD);
+    indiceD = marcasPrestamos.indexOf(valorMarcaD);
+    let cantidadesD = parseFloat(valorCant);
+
+
+    if(indiceEquipo != -1 && indiceD != -1 && cantidadesPrestamos[indiceEquipo] >= cantidadesD){
+        cantidadesPrestamos[indiceEquipo] = cantidadesPrestamos[indiceEquipo]-cantidadesD
+        const actualizaD = document.querySelector('.actulizaD')
+        actualizaD.textContent = cantidadesPrestamos[indiceEquipo];
+
+        const cuerpoTablaDevolver = document.querySelector('#cuerpoTablaD');
+        const nuevoElemento = document.createElement('tr');
+        
+        const instructor = document.createElement('td');
+        const equipo = document.createElement('td');
+        const marca = document.createElement('td');
+        const cantidad = document.createElement('td');
+
+        cuerpoTablaDevolver.appendChild(nuevoElemento);
+        nuevoElemento.appendChild(instructor);
+        nuevoElemento.appendChild(equipo);
+        nuevoElemento.appendChild(marca);
+        nuevoElemento.appendChild(cantidad);
+
+        instructor.textContent = valorNombreD;
+        equipo.textContent = valorNombreEquipoD;
+        marca.textContent = valorMarcaD;
+        cantidad.textContent = valorCant;
+    }
+}
+
+
+window.onload = function(){
+    const data = localStorage.getItem('miDato');
+    if (data) {
+        return JSON.parse(miDato);
+      } else {
+        console.log('No se encontraron datos bajo esa clave');
+        return [];
+      };
 
 }

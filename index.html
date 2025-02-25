@@ -73,7 +73,7 @@
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#agregarPrestamos" >
                             Agregar Prestamo
                         </button>
-                        <button class="btn btn-primary devolverPrestamo" id="btnDevolverPrestamo">Devolver
+                        <button class="btn btn-primary devolverPrestamo" id="btnDevolverPrestamo" data-bs-toggle="modal" data-bs-target="#DevolverPrestamos">Devolver
                             prestamo</button>
                     </div>
                 </div>
@@ -92,6 +92,22 @@
                             </tr>
                         </thead>
                         <tbody id="cuerpoTablaP">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <div class="col">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Instructor</th>
+                                <th scope="col">Equipo</th>
+                                <th scope="col">Marca</th>
+                                <th scope="col">Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cuerpoTablaD">
                         </tbody>
                     </table>
                 </div>
@@ -139,7 +155,7 @@
     </div>
 
 
-    <div class="modal fade" id="agregarPrestamos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="agregarPrestamos" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -170,6 +186,42 @@
                 <div class="modal-footer">
                     <button class="btn btn-primary" id="cerrar">Cerrar</button>
                     <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="guarda" onclick="prestamos()">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="DevolverPrestamos" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Devolver equipo</h3>
+                    <p>Ingrese el siguiente formulario</p>
+                    <div class="col">
+                        <label for="InstructorP">Nombre Instructor </label>
+                        <input type="text" class="form-control" id="InstructorD">
+                        
+                    </div>
+                    <div class="col">
+                        <label for="nombreEquipoP">nombre Equipo</label>
+                        <input type="text" class="form-control" id="nombreEquipoD">
+                    </div>
+                    <div class="col">
+                        <label for="marcaP">Marca</label>
+                        <input type="text" class="form-control" id="marcaD">
+                    </div>
+                    <div class="col">
+                        <label for="cantidadP">Cantidad</label>
+                        <input type="text" class="form-control" id="cantidadD">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" id="cerrar">Cerrar</button>
+                    <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" id="guarda" onclick="devolver()">Guardar</button>
                 </div>
             </div>
         </div>
